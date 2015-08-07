@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4FE8C61B72A146002BA732 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4FE8C51B72A146002BA732 /* TestViewController.swift */; };
+		2C5625D01B751D590022C962 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5625CF1B751D590022C962 /* User.swift */; };
+		2C5625D61B7535CA0022C962 /* boba.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2C5625D11B7535CA0022C962 /* boba.jpg */; };
+		2C5625D71B7535CA0022C962 /* gnc.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2C5625D21B7535CA0022C962 /* gnc.jpeg */; };
+		2C5625D81B7535CA0022C962 /* Lululemon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2C5625D31B7535CA0022C962 /* Lululemon.jpg */; };
+		2C5625D91B7535CA0022C962 /* sportsforum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2C5625D41B7535CA0022C962 /* sportsforum.jpg */; };
+		2C5625DA1B7535CA0022C962 /* Urbane.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2C5625D51B7535CA0022C962 /* Urbane.jpg */; };
 		2C5828F51B6964B50099842B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5828F41B6964B50099842B /* AppDelegate.swift */; };
 		2C5828F71B6964B50099842B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5828F61B6964B50099842B /* HomeViewController.swift */; };
 		2C5828FC1B6964B50099842B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C5828FB1B6964B50099842B /* Images.xcassets */; };
@@ -80,6 +87,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C4FE8C51B72A146002BA732 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		2C5625CF1B751D590022C962 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2C5625D11B7535CA0022C962 /* boba.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boba.jpg; sourceTree = "<group>"; };
+		2C5625D21B7535CA0022C962 /* gnc.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gnc.jpeg; sourceTree = "<group>"; };
+		2C5625D31B7535CA0022C962 /* Lululemon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lululemon.jpg; sourceTree = "<group>"; };
+		2C5625D41B7535CA0022C962 /* sportsforum.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sportsforum.jpg; sourceTree = "<group>"; };
+		2C5625D51B7535CA0022C962 /* Urbane.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Urbane.jpg; sourceTree = "<group>"; };
 		2C5828EF1B6964B50099842B /* Motiv8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motiv8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C5828F31B6964B50099842B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C5828F41B6964B50099842B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -192,11 +206,13 @@
 				2C5829181B69655D0099842B /* NavigationViewController.swift */,
 				2C5DA1D91B6AB5B7004C05C4 /* RewardsViewController.swift */,
 				2C7AFB341B6FEEFB0056432C /* EditTableViewController.swift */,
+				2C4FE8C51B72A146002BA732 /* TestViewController.swift */,
 				2C7AFB321B6FEED30056432C /* ProductDetailViewController.swift */,
 				2C7AFB301B6FEEB30056432C /* ProductTableViewCell.swift */,
 				2C7AFB2C1B6FEE360056432C /* Product.swift */,
 				2C7AFB2E1B6FEE5F0056432C /* ProductLine.swift */,
 				2C5DA1DF1B6AC3C7004C05C4 /* LeaderboardViewController.swift */,
+				2C5625CF1B751D590022C962 /* User.swift */,
 				2C5DA1E11B6ACB82004C05C4 /* AboutViewController.swift */,
 				2C5829141B69651A0099842B /* NavigationCell.swift */,
 				2C5829161B69653E0099842B /* NavigationTransitionOperator.swift */,
@@ -238,6 +254,11 @@
 		2C7AFB811B7014930056432C /* DemoAssets */ = {
 			isa = PBXGroup;
 			children = (
+				2C5625D11B7535CA0022C962 /* boba.jpg */,
+				2C5625D21B7535CA0022C962 /* gnc.jpeg */,
+				2C5625D31B7535CA0022C962 /* Lululemon.jpg */,
+				2C5625D41B7535CA0022C962 /* sportsforum.jpg */,
+				2C5625D51B7535CA0022C962 /* Urbane.jpg */,
 				2C7AFBCE1B70167C0056432C /* sportsauthority.png */,
 				2C7AFBCF1B70167C0056432C /* ns-logo.jpg */,
 				2C7AFB821B7014930056432C /* airport-express.png */,
@@ -364,6 +385,7 @@
 			files = (
 				2C7AFBAE1B7014930056432C /* apple-watch.png in Resources */,
 				2C7AFBB41B7014930056432C /* eyeball.png in Resources */,
+				2C5625D91B7535CA0022C962 /* sportsforum.jpg in Resources */,
 				2C7AFBCA1B7014930056432C /* magic-trackpad.png in Resources */,
 				2C7AFBD01B70167C0056432C /* sportsauthority.png in Resources */,
 				2C7AFBCC1B7014930056432C /* star_sel.png in Resources */,
@@ -378,6 +400,7 @@
 				2C7AFBBB1B7014930056432C /* iphone6.png in Resources */,
 				2C7AFBB31B7014930056432C /* display.png in Resources */,
 				2C7AFBC31B7014930056432C /* mac-mini.png in Resources */,
+				2C5625D81B7535CA0022C962 /* Lululemon.jpg in Resources */,
 				2C58291D1B6982720099842B /* motiv8gif.gif in Resources */,
 				2C7AFBB01B7014930056432C /* battery-charger.png in Resources */,
 				2C7AFBC01B7014930056432C /* iwork.png in Resources */,
@@ -392,7 +415,9 @@
 				2C7AFBCD1B7014930056432C /* star_uns.png in Resources */,
 				2C7AFBA81B7014930056432C /* airport-express.png in Resources */,
 				2C7AFBCB1B7014930056432C /* os-x.png in Resources */,
+				2C5625D71B7535CA0022C962 /* gnc.jpeg in Resources */,
 				2C7AFBB51B7014930056432C /* final-cut-pro-x.png in Resources */,
+				2C5625D61B7535CA0022C962 /* boba.jpg in Resources */,
 				2C7AFBC41B7014930056432C /* mac-pro.png in Resources */,
 				2C7AFBC21B7014930056432C /* logic-pro-x.png in Resources */,
 				2C7AFBC61B7014930056432C /* macbook-pro-13.png in Resources */,
@@ -402,6 +427,7 @@
 				2C7AFBAD1B7014930056432C /* apple-tv.png in Resources */,
 				2C7AFBAA1B7014930056432C /* airport-time-capsule.png in Resources */,
 				2C5DA1E51B6ACC83004C05C4 /* Main.storyboard in Resources */,
+				2C5625DA1B7535CA0022C962 /* Urbane.jpg in Resources */,
 				2C7AFBBA1B7014930056432C /* ipad-air2.png in Resources */,
 				2C7AFBB61B7014930056432C /* icloud.png in Resources */,
 				2C7AFBD11B70167C0056432C /* ns-logo.jpg in Resources */,
@@ -425,10 +451,12 @@
 			files = (
 				2C5829171B69653E0099842B /* NavigationTransitionOperator.swift in Sources */,
 				2C5828F71B6964B50099842B /* HomeViewController.swift in Sources */,
+				2C4FE8C61B72A146002BA732 /* TestViewController.swift in Sources */,
 				2C5828F51B6964B50099842B /* AppDelegate.swift in Sources */,
 				2C5DA1DC1B6ABB21004C05C4 /* CustomSegueClass.swift in Sources */,
 				2C5DA1E01B6AC3C7004C05C4 /* LeaderboardViewController.swift in Sources */,
 				2C7AFB2F1B6FEE5F0056432C /* ProductLine.swift in Sources */,
+				2C5625D01B751D590022C962 /* User.swift in Sources */,
 				2C7AFB2D1B6FEE360056432C /* Product.swift in Sources */,
 				2C7AFB311B6FEEB30056432C /* ProductTableViewCell.swift in Sources */,
 				2C5829151B69651A0099842B /* NavigationCell.swift in Sources */,

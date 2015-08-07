@@ -94,16 +94,6 @@ class NavigationViewController: UIViewController, UITableViewDelegate, UITableVi
 			else {
 				self.performSegueWithIdentifier("presentAbout", sender: self)
 			}
-		/*case 4:
-			if let pView = presentingView as? AboutViewController {
-				dismissViewControllerAnimated(true, completion: nil)
-			}
-			else {
-				self.performSegueWithIdentifier("presentAbout", sender: self)
-			}
-		case 5:
-			dismissViewControllerAnimated(true, completion: nil)
-			NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("houseKeepingLogout"), userInfo: nil, repeats: false)*/
 		default:
 			println("fuckin up")
 		}

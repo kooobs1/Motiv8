@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Motiv8. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class EditTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -14,8 +15,11 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate, UITex
 	var product: Product?
 	
 	@IBOutlet weak var productImageView: UIImageView!
-	@IBOutlet weak var productTitleLabel: UITextField!
-	@IBOutlet weak var productDescriptionTextView: UITextView!
+	@IBOutlet weak var productTitleLabel: UILabel!
+	//@IBOutlet weak var productDescriptionTextView: UITextView!
+	@IBOutlet weak var productDeal1: UIButton!
+	@IBOutlet weak var productDeal2: UIButton!
+	@IBOutlet weak var productDeal3: UIButton!
 	
 	// MARK: - VC Lifecycle
 	
@@ -24,14 +28,17 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate, UITex
 		title = "Edit Product"
 		productImageView.image = product?.image
 		productTitleLabel.text = product?.title
-		productDescriptionTextView.text = product?.description
+		//productDescriptionTextView.text = product?.deal1
+		productDeal1.setTitle(product?.deal1, forState: .Normal)
+		productDeal2.setTitle(product?.deal2, forState: .Normal)
+		productDeal3.setTitle(product?.deal3, forState: .Normal)
 	}
 	
-	override func viewWillDisappear(animated: Bool) {
+	/*override func viewWillDisappear(animated: Bool) {
 		product?.title = productTitleLabel.text
 		product?.description = productDescriptionTextView.text
 		product?.image = productImageView.image!
-	}
+	}*/
 	
 	// MARK: - UITextFieldDelegate
 	
@@ -43,9 +50,9 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate, UITex
 	
 	// MARK: - UIScrollViewDelegate
 	
-	override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+	/*override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
 		productDescriptionTextView.resignFirstResponder()
-	}
+	}*/
 	
 	// MARK: - Table View Interaction
 	
@@ -77,4 +84,26 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate, UITex
 		dismissViewControllerAnimated(true, completion: nil)
 	}
 	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		
+		if let identifier = segue.identifier {
+			switch identifier {
+			case "presentTest1":
+				if let testVC = segue.destinationViewController as? TestViewController {
+					self.modalPresentationStyle = UIModalPresentationStyle.Custom
+				}
+			case "presentTest2":
+				if let testVC = segue.destinationViewController as? TestViewController {
+					self.modalPresentationStyle = UIModalPresentationStyle.Custom
+				}
+			case "presentTest3":
+				if let testVC = segue.destinationViewController as? TestViewController {
+					self.modalPresentationStyle = UIModalPresentationStyle.Custom
+				}
+			default: break
+			}
+		}
+	}
+	
+	@IBAction func unwindToEdit (segue : UIStoryboardSegue) {}
 }

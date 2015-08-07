@@ -9,15 +9,6 @@
 import Foundation
 import UIKit
 
-public enum ProductRating
-{
-	case Unrated
-	case Average
-	case OK
-	case Good
-	case Brilliant
-}
-
 // Represents a generic product. Need an image named "default"
 
 class Product
@@ -25,9 +16,11 @@ class Product
 	var title: String
 	var description: String
 	var image: UIImage
-	var rating: ProductRating
+	var deal1: String
+	var deal2: String
+	var deal3: String
 	
-	init(titled: String, description: String, imageName: String)
+	init(titled: String, description: String, imageName: String, deal1: String, deal2: String, deal3: String)
 	{
 		self.title = titled
 		self.description = description
@@ -36,6 +29,8 @@ class Product
 		} else {
 			image = UIImage(named: "default")!
 		}
-		rating = .Unrated
+		self.deal1 = deal1
+		self.deal2 = deal2
+		self.deal3 = deal3
 	}
 }

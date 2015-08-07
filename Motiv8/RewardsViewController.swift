@@ -18,7 +18,7 @@ class RewardsViewController: UITableViewController, UITableViewDelegate, UITable
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		navigationItem.rightBarButtonItem = editButtonItem()
+		//navigationItem.rightBarButtonItem = editButtonItem()
 		
 		// Make the row height dynamic
 		tableView.estimatedRowHeight = tableView.rowHeight
@@ -70,7 +70,7 @@ class RewardsViewController: UITableViewController, UITableViewDelegate, UITable
 	
 	// MARK: - Edit Tableview
 	
-	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+	/*override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
 		if editingStyle == UITableViewCellEditingStyle.Delete {
 			let productLine = productLines[indexPath.section]
 			productLine.products.removeAtIndex(indexPath.row)
@@ -78,7 +78,7 @@ class RewardsViewController: UITableViewController, UITableViewDelegate, UITable
 			//            tableView.reloadData()    Bad way!
 			tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
 		}
-	}
+	}*/
 	
 	// MARK: - Animate Table View Cell
 	
