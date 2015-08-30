@@ -10,7 +10,7 @@
         <!--Initial View Controller-->
         <scene sceneID="lqU-s9-Ert">
             <objects>
-                <viewController id="7ik-D8-8SQ" userLabel="Initial View Controller" sceneMemberID="viewController">
+                <viewController id="7ik-D8-8SQ" userLabel="Initial View Controller" customClass="InitialViewController" customModule="Motiv8" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Abc-s0-9vn"/>
                         <viewControllerLayoutGuide type="bottom" id="cNO-2t-gDJ"/>
@@ -18,42 +18,11 @@
                     <view key="view" contentMode="scaleToFill" id="rWr-tZ-Fgz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IqN-rJ-Xq2">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="30"/>
-                                <state key="normal" title="Motiv8">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="presentation" identifier="presentHome" id="Kbl-a0-5Gq"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="IqN-rJ-Xq2" firstAttribute="centerX" secondItem="rWr-tZ-Fgz" secondAttribute="centerX" id="DrU-Qy-Ojl"/>
-                            <constraint firstItem="IqN-rJ-Xq2" firstAttribute="centerY" secondItem="rWr-tZ-Fgz" secondAttribute="centerY" id="ZfC-Xy-muc"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="IqN-rJ-Xq2"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="DrU-Qy-Ojl"/>
-                                <exclude reference="ZfC-Xy-muc"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="IqN-rJ-Xq2"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="DrU-Qy-Ojl"/>
-                                <include reference="ZfC-Xy-muc"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="presentation" identifier="presentHome" id="V5U-tB-pjy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOv-ie-3Xq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -865,8 +834,8 @@
         <image name="menu" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kjv-nO-sX7"/>
+        <segue reference="U86-Sj-Vtk"/>
+        <segue reference="V5U-tB-pjy"/>
         <segue reference="uk8-dr-4No"/>
-        <segue reference="Kbl-a0-5Gq"/>
     </inferredMetricsTieBreakers>
 </document>
