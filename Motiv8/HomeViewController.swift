@@ -31,20 +31,22 @@ class HomeViewController: UIViewController, AddGeoLocationViewControllerDelegate
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		var filePath = NSBundle.mainBundle().pathForResource("motiv8gif", ofType: "gif")
-		var gif = NSData(contentsOfFile: filePath!)
+		let filePath = NSBundle.mainBundle().pathForResource("motiv8gif", ofType: "gif")
+		let gif = NSData(contentsOfFile: filePath!)
 		
-		webViewBG.loadData(gif, MIMEType: "image/gif", textEncodingName: nil, baseURL: nil)
+		webViewBG.loadData(gif!, MIMEType: "image/gif", textEncodingName: "UTF-8", baseURL: NSURL(fileURLWithPath:
+			NSBundle.mainBundle().bundlePath))
 		webViewBG.userInteractionEnabled = false
 		
-		var timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+		_ = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+		
+		self.mapView.delegate = self
 		
 		// 1
 		locationManager.delegate = self
 		// 2
 		locationManager.requestAlwaysAuthorization()
 		// 3
-		//onAdd()
 		loadAllGeoLocations()
 	}
 	
@@ -77,17 +79,6 @@ class HomeViewController: UIViewController, AddGeoLocationViewControllerDelegate
 	
 	// MARK: Loading and saving functions
 	
-	/*private func onAdd() {
-		var coordinate = mapView.centerCoordinate
-		var radius = 20
-		var identifier = NSUUID().UUIDString
-		var note = "You are at the gym lil boy"
-		var eventType = EventType.OnEntry //: EventType.OnExit
-		//delegate!.addGeoLocationViewController(controller: AddGeoLocationViewController.self, didAddCoordinate: coordinate, radius: radius, identifier: identifier, note: note, eventType: eventType)
-		print(coordinate.latitude)
-		print(coordinate.longitude)
-		GeoLocations = [GeoLocation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(38.027588), longitude: CLLocationDegrees(-122.556459)), radius: 1000, identifier: NSUUID().UUIDString, note: "You are at the gym lil boy", eventType: EventType.OnEntry)]
-	}*/
 	
 	func loadAllGeoLocations() {
 		geolocations = []
@@ -100,11 +91,11 @@ class HomeViewController: UIViewController, AddGeoLocationViewControllerDelegate
 			}
 		}
 		
-		addGeoLocation(GeoLocation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(38.027588), longitude: CLLocationDegrees(-122.556459)), radius: CLLocationDistance(1000), identifier: NSUUID().UUIDString, note: "You are at the gym lil boy", eventType: EventType.OnEntry))
+		addGeoLocation(GeoLocation(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(38.027588), longitude: CLLocationDegrees(-122.556459)), radius: CLLocationDistance(20), identifier: NSUUID().UUIDString, note: "You are at the gym lil boy", eventType: EventType.OnEntry))
 	}
 	
 	func saveAllGeoLocations() {
-		var items = NSMutableArray()
+		let items = NSMutableArray()
 		for GeoLocation in geolocations {
 			let item = NSKeyedArchiver.archivedDataWithRootObject(GeoLocation)
 			items.addObject(item)
@@ -125,7 +116,7 @@ class HomeViewController: UIViewController, AddGeoLocationViewControllerDelegate
 	}
 	
 	func removeGeoLocation(geolocation: GeoLocation) {
-		if let indexInArray = find(geolocations, geolocation) {
+		if let indexInArray = geolocations.indexOf(geolocation) {
 			geolocations.removeAtIndex(indexInArray)
 		}
 		
@@ -157,7 +148,7 @@ class HomeViewController: UIViewController, AddGeoLocationViewControllerDelegate
 	
 	// MARK: MKMapViewDelegate
 	
-	func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+	/*func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
 		let identifier = "myGeoLocation"
 		if annotation is GeoLocation {
 			var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) as? MKPinAnnotationView
@@ -174,23 +165,22 @@ class HomeViewController: UIViewController, AddGeoLocationViewControllerDelegate
 			return annotationView
 		}
 		return nil
-	}
+	}*/
 	
-	func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
-		if overlay is MKCircle {
-			print("here")
-			var circleRenderer = MKCircleRenderer(overlay: overlay)
+	func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+		//if overlay is MKCircle {
+			//print("here")
+			let circleRenderer = MKCircleRenderer(overlay: overlay)
 			circleRenderer.lineWidth = 1.0
 			circleRenderer.strokeColor = UIColor.purpleColor()
 			circleRenderer.fillColor = UIColor.purpleColor().colorWithAlphaComponent(0.4)
 			return circleRenderer
-		}
-		return nil
+		//}
 	}
 	
-	func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+	func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
 		// Delete GeoLocation
-		var geolocation = view.annotation as! GeoLocation
+		let geolocation = view.annotation as! GeoLocation
 		stopMonitoringGeoLocation(geolocation)
 		removeGeoLocation(geolocation)
 		saveAllGeoLocations()
@@ -199,11 +189,8 @@ class HomeViewController: UIViewController, AddGeoLocationViewControllerDelegate
 	// MARK: Map overlay functions
 	
 	func addRadiusOverlayForGeoLocation(geolocation: GeoLocation) {
-		print("hello")
-		//print(mapView.overlays.count)
+		//print("hello")
 		mapView?.addOverlay(MKCircle(centerCoordinate: geolocation.coordinate, radius: geolocation.radius))
-		//overlayMe(mapView, rendererForOverlay: MKCircle(centerCoordinate: geolocation.coordinate, radius: geolocation.radius))
-		//print(mapView.overlays.count)
 	}
 	
 	func removeRadiusOverlayForGeoLocation(geolocation: GeoLocation) {
@@ -211,7 +198,7 @@ class HomeViewController: UIViewController, AddGeoLocationViewControllerDelegate
 		if let overlays = mapView?.overlays {
 			for overlay in overlays {
 				if let circleOverlay = overlay as? MKCircle {
-					var coord = circleOverlay.coordinate
+					let coord = circleOverlay.coordinate
 					if coord.latitude == geolocation.coordinate.latitude && coord.longitude == geolocation.coordinate.longitude && circleOverlay.radius == geolocation.radius {
 						mapView?.removeOverlay(circleOverlay)
 						break
@@ -227,7 +214,7 @@ class HomeViewController: UIViewController, AddGeoLocationViewControllerDelegate
 		zoomToUserLocationInMapView(mapView)
 	}
 	
-	func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+	func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
 		mapView.showsUserLocation = (status == .AuthorizedAlways)
 	}
 	
@@ -241,7 +228,7 @@ class HomeViewController: UIViewController, AddGeoLocationViewControllerDelegate
 	}
 	
 	func startMonitoringGeoLocation(geolocation: GeoLocation) {
-		print("wassup")
+		print("wassup", terminator: "")
 		// 1
 		if !CLLocationManager.isMonitoringAvailableForClass(CLCircularRegion) {
 			showSimpleAlertWithTitle("Error", message: "Geofencing is not supported on this device!", viewController: self)
@@ -267,11 +254,11 @@ class HomeViewController: UIViewController, AddGeoLocationViewControllerDelegate
 		}
 	}
 	
-	func locationManager(manager: CLLocationManager!, monitoringDidFailForRegion region: CLRegion!, withError error: NSError!) {
-		println("Monitoring failed for region with identifier: \(region.identifier)")
+	func locationManager(manager: CLLocationManager, monitoringDidFailForRegion region: CLRegion?, withError error: NSError) {
+		print("Monitoring failed for region with identifier: \(region!.identifier)")
 	}
 	
-	func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-		println("Location Manager failed with the following error: \(error)")
+	func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+		print("Location Manager failed with the following error: \(error)")
 	}
 }

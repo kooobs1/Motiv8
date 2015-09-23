@@ -16,7 +16,7 @@ class NavigationTransitionOperator: NSObject, UIViewControllerAnimatedTransition
 	var presentingView : UIViewController!
 	
 	// returns the number of seconds that the animation takes
-	func transitionDuration(transitionContext: UIViewControllerContextTransitioning)
+	func transitionDuration(transitionContext: UIViewControllerContextTransitioning?)
 		-> NSTimeInterval {
 			return 0.5
 	}
@@ -68,12 +68,12 @@ class NavigationTransitionOperator: NSObject, UIViewControllerAnimatedTransition
 		self.snapshot.userInteractionEnabled = true
 		self.snapshot.addGestureRecognizer(tapGesture)
 		
-		container.addSubview(toView)
-		container.addSubview(snapshot)
+		container!.addSubview(toView)
+		container!.addSubview(snapshot)
 		
 		let duration = self.transitionDuration(transitionContext)
 		
-		UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: nil, animations: {
+		UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: [], animations: {
 			
 			self.snapshot.transform = offSetTransform
 			
@@ -90,15 +90,15 @@ class NavigationTransitionOperator: NSObject, UIViewControllerAnimatedTransition
 	// hide navigation menu
 	func dismissNavigation(transitionContext: UIViewControllerContextTransitioning) {
 		
-		let container = transitionContext.containerView()
+		_ = transitionContext.containerView()
 		let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)
-		let fromView = fromViewController!.view
+		_ = fromViewController!.view
 		let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
-		let toView = toViewController!.view
+		_ = toViewController!.view
 		
 		let duration = self.transitionDuration(transitionContext)
 		
-		UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: nil, animations: {
+		UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: [], animations: {
 			
 			self.snapshot.transform = CGAffineTransformIdentity
 			

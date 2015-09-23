@@ -23,12 +23,15 @@
 		2C5829171B69653E0099842B /* NavigationTransitionOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5829161B69653E0099842B /* NavigationTransitionOperator.swift */; };
 		2C5829191B69655D0099842B /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5829181B69655D0099842B /* NavigationViewController.swift */; };
 		2C58291D1B6982720099842B /* motiv8gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2C58291C1B6982720099842B /* motiv8gif.gif */; };
+		2C5C98EF1B8CE76100B6DB08 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5C98ED1B8CE76100B6DB08 /* FBSDKCoreKit.framework */; };
+		2C5C98F01B8CE76100B6DB08 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5C98EE1B8CE76100B6DB08 /* FBSDKLoginKit.framework */; };
 		2C5DA1DA1B6AB5B7004C05C4 /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DA1D91B6AB5B7004C05C4 /* RewardsViewController.swift */; };
 		2C5DA1DC1B6ABB21004C05C4 /* CustomSegueClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DA1DB1B6ABB21004C05C4 /* CustomSegueClass.swift */; };
 		2C5DA1DE1B6ABE98004C05C4 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DA1DD1B6ABE98004C05C4 /* InitialViewController.swift */; };
 		2C5DA1E01B6AC3C7004C05C4 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DA1DF1B6AC3C7004C05C4 /* LeaderboardViewController.swift */; };
 		2C5DA1E21B6ACB82004C05C4 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DA1E11B6ACB82004C05C4 /* AboutViewController.swift */; };
 		2C5DA1E51B6ACC83004C05C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C5DA1E31B6ACC83004C05C4 /* Main.storyboard */; };
+		2C6DF8701B8517E700AACB2A /* AddGeoLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6DF86F1B8517E700AACB2A /* AddGeoLocationViewController.swift */; };
 		2C7AFB2D1B6FEE360056432C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7AFB2C1B6FEE360056432C /* Product.swift */; };
 		2C7AFB2F1B6FEE5F0056432C /* ProductLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7AFB2E1B6FEE5F0056432C /* ProductLine.swift */; };
 		2C7AFB311B6FEEB30056432C /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7AFB301B6FEEB30056432C /* ProductTableViewCell.swift */; };
@@ -74,6 +77,11 @@
 		2C7AFBCD1B7014930056432C /* star_uns.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C7AFBA71B7014930056432C /* star_uns.png */; };
 		2C7AFBD01B70167C0056432C /* sportsauthority.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C7AFBCE1B70167C0056432C /* sportsauthority.png */; };
 		2C7AFBD11B70167C0056432C /* ns-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2C7AFBCF1B70167C0056432C /* ns-logo.jpg */; };
+		2C9172E51B8BC3D800CC1A62 /* TestLocations.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 2C9172E41B8BC3D800CC1A62 /* TestLocations.gpx */; };
+		2CFEE5E11B7AA18C006DD624 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CFEE5E01B7AA18C006DD624 /* CoreLocation.framework */; };
+		2CFEE5E31B7AA22F006DD624 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFEE5E21B7AA22F006DD624 /* Utilities.swift */; };
+		2CFEE5E51B7AA259006DD624 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CFEE5E41B7AA259006DD624 /* MapKit.framework */; };
+		2CFEE5E71B7AA266006DD624 /* GeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFEE5E61B7AA266006DD624 /* GeoLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,12 +115,15 @@
 		2C5829161B69653E0099842B /* NavigationTransitionOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationTransitionOperator.swift; sourceTree = "<group>"; };
 		2C5829181B69655D0099842B /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		2C58291C1B6982720099842B /* motiv8gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = motiv8gif.gif; sourceTree = "<group>"; };
+		2C5C98ED1B8CE76100B6DB08 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../Downloads/FacebookSDKs-iOS-20150813/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		2C5C98EE1B8CE76100B6DB08 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../Downloads/FacebookSDKs-iOS-20150813/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		2C5DA1D91B6AB5B7004C05C4 /* RewardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
 		2C5DA1DB1B6ABB21004C05C4 /* CustomSegueClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegueClass.swift; sourceTree = "<group>"; };
 		2C5DA1DD1B6ABE98004C05C4 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		2C5DA1DF1B6AC3C7004C05C4 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		2C5DA1E11B6ACB82004C05C4 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		2C5DA1E41B6ACC83004C05C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2C6DF86F1B8517E700AACB2A /* AddGeoLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGeoLocationViewController.swift; sourceTree = "<group>"; };
 		2C7AFB2C1B6FEE360056432C /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		2C7AFB2E1B6FEE5F0056432C /* ProductLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductLine.swift; sourceTree = "<group>"; };
 		2C7AFB301B6FEEB30056432C /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
@@ -158,6 +169,11 @@
 		2C7AFBA71B7014930056432C /* star_uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_uns.png; sourceTree = "<group>"; };
 		2C7AFBCE1B70167C0056432C /* sportsauthority.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sportsauthority.png; sourceTree = "<group>"; };
 		2C7AFBCF1B70167C0056432C /* ns-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ns-logo.jpg"; sourceTree = "<group>"; };
+		2C9172E41B8BC3D800CC1A62 /* TestLocations.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestLocations.gpx; sourceTree = "<group>"; };
+		2CFEE5E01B7AA18C006DD624 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2CFEE5E21B7AA22F006DD624 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		2CFEE5E41B7AA259006DD624 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2CFEE5E61B7AA266006DD624 /* GeoLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeoLocation.swift; path = ../GeoLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +181,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CFEE5E51B7AA259006DD624 /* MapKit.framework in Frameworks */,
+				2C5C98EF1B8CE76100B6DB08 /* FBSDKCoreKit.framework in Frameworks */,
+				2C5C98F01B8CE76100B6DB08 /* FBSDKLoginKit.framework in Frameworks */,
+				2CFEE5E11B7AA18C006DD624 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,8 +221,11 @@
 			children = (
 				2C58291C1B6982720099842B /* motiv8gif.gif */,
 				2C5828F41B6964B50099842B /* AppDelegate.swift */,
-				2C5828F61B6964B50099842B /* HomeViewController.swift */,
 				2C5DA1DD1B6ABE98004C05C4 /* InitialViewController.swift */,
+				2C5828F61B6964B50099842B /* HomeViewController.swift */,
+				2C6DF86F1B8517E700AACB2A /* AddGeoLocationViewController.swift */,
+				2CFEE5E61B7AA266006DD624 /* GeoLocation.swift */,
+				2CFEE5E21B7AA22F006DD624 /* Utilities.swift */,
 				2C5829181B69655D0099842B /* NavigationViewController.swift */,
 				2C5DA1D91B6AB5B7004C05C4 /* RewardsViewController.swift */,
 				2C7AFB341B6FEEFB0056432C /* EditTableViewController.swift */,
@@ -220,6 +243,7 @@
 				2C5DA1E31B6ACC83004C05C4 /* Main.storyboard */,
 				2C5828FD1B6964B50099842B /* LaunchScreen.xib */,
 				2C5828FB1B6964B50099842B /* Images.xcassets */,
+				2C5C98E41B8CE39600B6DB08 /* Frameworks */,
 				2C7AFB811B7014930056432C /* DemoAssets */,
 				2C5828F21B6964B50099842B /* Supporting Files */,
 			);
@@ -230,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				2C5828F31B6964B50099842B /* Info.plist */,
+				2C9172E41B8BC3D800CC1A62 /* TestLocations.gpx */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -249,6 +274,18 @@
 				2C5829091B6964B50099842B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2C5C98E41B8CE39600B6DB08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C5C98ED1B8CE76100B6DB08 /* FBSDKCoreKit.framework */,
+				2C5C98EE1B8CE76100B6DB08 /* FBSDKLoginKit.framework */,
+				2CFEE5E41B7AA259006DD624 /* MapKit.framework */,
+				2CFEE5E01B7AA18C006DD624 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		2C7AFB811B7014930056432C /* DemoAssets */ = {
@@ -347,7 +384,9 @@
 		2C5828E71B6964B50099842B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Motiv8;
 				TargetAttributes = {
 					2C5828EE1B6964B50099842B = {
@@ -391,6 +430,7 @@
 				2C7AFBCC1B7014930056432C /* star_sel.png in Resources */,
 				2C7AFBA91B7014930056432C /* airport-extreme.png in Resources */,
 				2C7AFBC71B7014930056432C /* macbook-pro-retina.png in Resources */,
+				2C9172E51B8BC3D800CC1A62 /* TestLocations.gpx in Resources */,
 				2C7AFBB21B7014930056432C /* default@2x.png in Resources */,
 				2C7AFBC81B7014930056432C /* macbook.png in Resources */,
 				2C7AFBC11B7014930056432C /* Jamba-Juice.jpg in Resources */,
@@ -455,8 +495,11 @@
 				2C5828F51B6964B50099842B /* AppDelegate.swift in Sources */,
 				2C5DA1DC1B6ABB21004C05C4 /* CustomSegueClass.swift in Sources */,
 				2C5DA1E01B6AC3C7004C05C4 /* LeaderboardViewController.swift in Sources */,
+				2CFEE5E31B7AA22F006DD624 /* Utilities.swift in Sources */,
 				2C7AFB2F1B6FEE5F0056432C /* ProductLine.swift in Sources */,
 				2C5625D01B751D590022C962 /* User.swift in Sources */,
+				2C6DF8701B8517E700AACB2A /* AddGeoLocationViewController.swift in Sources */,
+				2CFEE5E71B7AA266006DD624 /* GeoLocation.swift in Sources */,
 				2C7AFB2D1B6FEE360056432C /* Product.swift in Sources */,
 				2C7AFB311B6FEEB30056432C /* ProductTableViewCell.swift in Sources */,
 				2C5829151B69651A0099842B /* NavigationCell.swift in Sources */,
@@ -528,6 +571,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -592,8 +636,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Kaveh/Documents/FacebookSDK,
+					"/Users/Kaveh/Downloads/FacebookSDKs-iOS-20150813",
+				);
 				INFOPLIST_FILE = Motiv8/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Motiv8.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -602,8 +652,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Kaveh/Documents/FacebookSDK,
+					"/Users/Kaveh/Downloads/FacebookSDKs-iOS-20150813",
+				);
 				INFOPLIST_FILE = Motiv8/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Motiv8.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -622,6 +678,7 @@
 				);
 				INFOPLIST_FILE = Motiv8Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Motiv8.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Motiv8.app/Motiv8";
 			};
@@ -637,6 +694,7 @@
 				);
 				INFOPLIST_FILE = Motiv8Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Motiv8.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Motiv8.app/Motiv8";
 			};

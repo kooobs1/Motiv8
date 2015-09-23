@@ -29,15 +29,15 @@ class GeoLocation: NSObject, NSCoding, MKAnnotation {
 	var note: String
 	var eventType: EventType
 	
-	var title: String {
+	var title: String? {
 		if note.isEmpty {
 			return "No Note"
 		}
 		return note
 	}
 	
-	var subtitle: String {
-		var eventTypeString = eventType == .OnEntry ? "On Entry" : "On Exit"
+	var subtitle: String? {
+		let eventTypeString = eventType == .OnEntry ? "On Entry" : "On Exit"
 		return "Radius: \(radius)m - \(eventTypeString)"
 	}
 	
@@ -51,7 +51,7 @@ class GeoLocation: NSObject, NSCoding, MKAnnotation {
 	
 	// MARK: NSCoding
 	
-	required init(coder decoder: NSCoder) {
+	required init?(coder decoder: NSCoder) {
 		let latitude = decoder.decodeDoubleForKey(kGeoLocationLatitudeKey)
 		let longitude = decoder.decodeDoubleForKey(kGeoLocationLongitudeKey)
 		coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)

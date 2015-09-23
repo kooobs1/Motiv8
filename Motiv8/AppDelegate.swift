@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 		locationManager.delegate = self
 		locationManager.requestAlwaysAuthorization()
 		
-		application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Sound | .Alert | .Badge, categories: nil))
+		application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Sound, .Alert, .Badge], categories: nil))
 		UIApplication.sharedApplication().cancelAllLocalNotifications()
 		
 		//return true
@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 		return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 	}*/
 	
-	func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool
+	func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool
 	{
 		return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
 	}
@@ -72,20 +72,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 			}
 		} else {
    // Otherwise present a local notification
-			var notification = UILocalNotification()
+			let notification = UILocalNotification()
 			notification.alertBody = notefromRegionIdentifier(region.identifier)
 			notification.soundName = "Default";
 			UIApplication.sharedApplication().presentLocalNotificationNow(notification)
 		}
 	}
 	
-	func locationManager(manager: CLLocationManager!, didEnterRegion region: CLRegion!) {
+	func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
 		if region is CLCircularRegion {
 			handleRegionEvent(region)
 		}
 	}
 	
-	func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
+	func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
 		if region is CLCircularRegion {
 			handleRegionEvent(region)
 		}

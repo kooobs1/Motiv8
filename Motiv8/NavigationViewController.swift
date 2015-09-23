@@ -37,7 +37,7 @@ class NavigationViewController: UIViewController, UITableViewDelegate, UITableVi
 		
 		items = [home, rewards, leaderboard, about, signOut]
 		
-		var leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+		let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
 		leftSwipe.direction = .Left
 		view.addGestureRecognizer(leftSwipe)
 	}
@@ -67,35 +67,35 @@ class NavigationViewController: UIViewController, UITableViewDelegate, UITableVi
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		switch (indexPath.row) {
 		case 0:
-			if let pView = presentingView as? HomeViewController {
+			if let _ = presentingView as? HomeViewController {
 				dismissViewControllerAnimated(true, completion: nil)
 			}
 			else {
 				self.performSegueWithIdentifier("presentHome", sender: self)
 			}
 		case 1:
-			if let pView = presentingView as? RewardsViewController {
+			if let _ = presentingView as? RewardsViewController {
 				dismissViewControllerAnimated(true, completion: nil)
 			}
 			else {
 				self.performSegueWithIdentifier("presentRewards", sender: self)
 			}
 		case 2:
-			if let pView = presentingView as? LeaderboardViewController {
+			if let _ = presentingView as? LeaderboardViewController {
 				dismissViewControllerAnimated(true, completion: nil)
 			}
 			else {
 				self.performSegueWithIdentifier("presentLeaderboard", sender: self)
 			}
 		case 3:
-			if let pView = presentingView as? AboutViewController {
+			if let _ = presentingView as? AboutViewController {
 				dismissViewControllerAnimated(true, completion: nil)
 			}
 			else {
 				self.performSegueWithIdentifier("presentAbout", sender: self)
 			}
 		default:
-			println("fuckin up")
+			print("fuckin up")
 		}
 	}
 	

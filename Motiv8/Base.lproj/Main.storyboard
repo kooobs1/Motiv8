@@ -63,7 +63,7 @@
                                                 <segue destination="Umd-Ko-sFW" kind="custom" identifier="presentNav" customClass="CustomSegueClass" customModule="Motiv8" customModuleProvider="target" id="U86-Sj-Vtk"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="location" id="2xB-uQ-3nI">
+                                        <barButtonItem key="rightBarButtonItem" image="CurrentLocation" id="2xB-uQ-3nI">
                                             <connections>
                                                 <action selector="zoomToCurrentLocation:" destination="vXZ-lx-hvc" id="SGH-wY-Opx"/>
                                             </connections>
@@ -830,7 +830,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="location" width="30" height="30"/>
+        <image name="CurrentLocation" width="15" height="15"/>
         <image name="menu" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>

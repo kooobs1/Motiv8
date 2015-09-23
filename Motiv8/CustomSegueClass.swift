@@ -11,8 +11,8 @@ import UIKit
 
 class CustomSegueClass: UIStoryboardSegue {
 	override func perform() {
-		var sourceViewController: UIViewController = self.sourceViewController as! UIViewController
-		var destinationViewController: UIViewController = self.destinationViewController as! UIViewController
+		let sourceViewController: UIViewController = self.sourceViewController 
+		let destinationViewController: UIViewController = self.destinationViewController 
 		sourceViewController.view.addSubview(destinationViewController.view)
 		destinationViewController.view.removeFromSuperview()
 		

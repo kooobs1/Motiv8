@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RewardsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
+class RewardsViewController: UITableViewController {
 	
 	var navTransitionOperator = NavigationTransitionOperator()
 	

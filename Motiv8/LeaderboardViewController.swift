@@ -43,7 +43,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
 	}
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+		let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) 
 		
 		let row = indexPath.row
 		let users = LeaderboardViewController.rankUsers()
@@ -57,7 +57,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 		
-		let row = indexPath.row
+		_ = indexPath.row
 		//println(swiftBlogs[row])
 	}
 	
@@ -80,7 +80,7 @@ class LeaderboardViewController: UIViewController, UITableViewDataSource, UITabl
 	
 	func viewMoveInFromTop(view:UIView, animationTime:Float) {
 		
-		var animation:CATransition = CATransition()
+		let animation:CATransition = CATransition()
 		animation.duration = CFTimeInterval(animationTime)
 		animation.type = "moveIn"
 		animation.timingFunction = CAMediaTimingFunction(name: "easeInEaseOut")

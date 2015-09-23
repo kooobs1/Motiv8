@@ -77,7 +77,7 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate, UITex
 		}
 	}
 	
-	func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+	func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
 		let image = info[UIImagePickerControllerOriginalImage] as! UIImage
 		product?.image = image
 		productImageView.image = image
@@ -89,15 +89,15 @@ class EditTableViewController: UITableViewController, UITextFieldDelegate, UITex
 		if let identifier = segue.identifier {
 			switch identifier {
 			case "presentTest1":
-				if let testVC = segue.destinationViewController as? TestViewController {
+				if let _ = segue.destinationViewController as? TestViewController {
 					self.modalPresentationStyle = UIModalPresentationStyle.Custom
 				}
 			case "presentTest2":
-				if let testVC = segue.destinationViewController as? TestViewController {
+				if let _ = segue.destinationViewController as? TestViewController {
 					self.modalPresentationStyle = UIModalPresentationStyle.Custom
 				}
 			case "presentTest3":
-				if let testVC = segue.destinationViewController as? TestViewController {
+				if let _ = segue.destinationViewController as? TestViewController {
 					self.modalPresentationStyle = UIModalPresentationStyle.Custom
 				}
 			default: break
