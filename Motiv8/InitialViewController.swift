@@ -33,72 +33,6 @@ class InitialViewController: UIViewController, FBSDKLoginButtonDelegate {
 		//println("Current user id \(FBSDKAccessToken.currentAccessToken().userID)")
 		self.view.addSubview(loginButton)
 		
-		/*let urlString = "http://52.88.154.31/motiv8/users";
-		let request = NSMutableURLRequest(URL: NSURL(string: urlString)!);
-		_ = NSURLSession.sharedSession()
-		request.HTTPMethod = "POST"
-		let err: NSError?
-		let password = "Motiv8Password"
-		//let reqText = ["firstName": "Kaveh", "lastName": "Karimiyanha", "accessToken": "\(FBSDKAccessToken.currentAccessToken().tokenString)", "fbId": "\(FBSDKAccessToken.currentAccessToken().userID)"]
-		let reqText = ["firstName": "Kaveh", "lastName": "Karimiyanha", "accessToken": "Access Token", "fbId": "FaceBookID"]
-		
-		do {
-			//print("reqText...\n\(reqText)")
-		
-			//This Line fills the web service with required parameters.
-			request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(reqText, options: [])
-		} catch let error as NSError {
-			err = error
-			request.HTTPBody = nil
-		}
-		
-		request.setValue(password, forHTTPHeaderField: "User-Agent")
-		//request.setValue(FBSDKAccessToken.currentAccessToken().userID, forHTTPHeaderField: "From")
-		request.setValue("Kaveh", forHTTPHeaderField: "From")
-
-		
-		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-		request.addValue("application/json", forHTTPHeaderField: "Accept")
-		
-		var response: NSURLResponse?
-		
-		let data =  (try! NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)) as NSData
-
-		if let json = (try? NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)) as? NSDictionary {
-			print("json after put request...\njson.count: \(json.count)\n\(json)")
-			if let first_name = json["firstName"] as? String {
-				if first_name != "Kaveh" {
-					print("first name doesn't match")
-				}
-				if let last_name = json["lastName"] as? String {
-					if last_name != "Karimiyanha" {
-						print("last name doesn't match")
-					}
-					if let accessToken = json["accessToken"] as? String {
-						//defaults.setObject(ageInt, forKey: "PixieUserAge")
-						if accessToken != FBSDKAccessToken.currentAccessToken().tokenString {
-							print("accessToken doesn't match")
-						}
-						if let fbId = json ["fbId"] as? String {
-							if fbId != FBSDKAccessToken.currentAccessToken().userID {
-								print("fbId doesn't match")
-							}
-							
-						} else {
-							print("error fbId")
-						}
-					} else {
-						print("error accessToken")
-					}
-				} else {
-					print("error last_name")
-				}
-			} else {
-				print("error first_name")
-			}
-		} else {
-			print("error json")
-		}*/
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -112,6 +46,39 @@ class InitialViewController: UIViewController, FBSDKLoginButtonDelegate {
 		{
 			//NSLog("%@", result.objectForKey("email"))
 			print("Login complete.")
+            
+            let urlString = "http://52.88.154.31/motiv8/user";
+            let url = NSURL(string: urlString)
+            let request = NSMutableURLRequest(URL: url!)
+            var response: NSURLResponse?
+            var err: NSError
+            request.HTTPMethod = "POST"
+            
+            let password = "Motiv8Password"
+            let reqText = ["firstName": "Kaveh", "lastName": "Karimiyanha", "accessToken": "\(FBSDKAccessToken.currentAccessToken().tokenString)", "fbId": "\(FBSDKAccessToken.currentAccessToken().userID)"]
+            //let reqText = ["firstName": "Kaveh", "lastName": "Karimiyanha", "accessToken": "Access Token", "fbId": "FaceBookID"]
+            
+            do {
+                
+                //This Line fills the web service with required parameters.
+                request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(reqText, options: [])
+            } catch let error as NSError {
+                err = error
+                request.HTTPBody = nil
+            }
+            
+            request.setValue(password, forHTTPHeaderField: "User-Agent")
+            request.setValue(FBSDKAccessToken.currentAccessToken().userID, forHTTPHeaderField: "From")
+            //request.setValue("Kaveh", forHTTPHeaderField: "From")
+            
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            
+            let data =  (try! NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)) as NSData
+            
+            let resp = NSString(data: data, encoding: NSUTF8StringEncoding)
+            print(resp)
+            
 			self.performSegueWithIdentifier("presentHome", sender: self)
 		}
 		else
