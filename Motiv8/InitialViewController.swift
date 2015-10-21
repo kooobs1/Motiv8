@@ -12,6 +12,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 class InitialViewController: UIViewController, FBSDKLoginButtonDelegate {
+	@IBOutlet weak var bckImage: UIImageView!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -26,13 +27,16 @@ class InitialViewController: UIViewController, FBSDKLoginButtonDelegate {
 			self.performSegueWithIdentifier("presentHome", sender: self)
 		}
 		
+		self.view.addSubview(bckImage)
+		
 		let loginButton = FBSDKLoginButton()
 		loginButton.readPermissions = ["public_profile", "email", "user_friends"]
 		loginButton.center = self.view.center
 		loginButton.delegate = self
 		//println("Current user id \(FBSDKAccessToken.currentAccessToken().userID)")
 		self.view.addSubview(loginButton)
-		
+		self.view.bringSubviewToFront(loginButton)
+		self.view.sendSubviewToBack(bckImage)
 	}
 	
 	override func didReceiveMemoryWarning() {

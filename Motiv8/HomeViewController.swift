@@ -10,35 +10,40 @@ import Foundation
 import UIKit
 import MapKit
 import CoreLocation
+import WatchKit
 
 let kSavedItemsKey = "savedItems"
 
 class HomeViewController: UIViewController, AddGeoLocationViewControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
 	
 	var navTransitionOperator = NavigationTransitionOperator()
-	@IBOutlet weak var webViewBG: UIWebView!
+	//@IBOutlet weak var webViewBG: UIWebView!
 	@IBOutlet weak var mapView: MKMapView!
 	//var moviePlayer: MPMoviePlayerController?
 	@IBOutlet weak var fitPoints: UILabel!
-	@IBOutlet weak var totalPts: UILabel!
+	//@IBOutlet weak var totalPts: UILabel!
 	var pts = 0
 	var fitPts = 0
 	var geolocations = [GeoLocation]()
 	let locationManager = CLLocationManager()
+	@IBOutlet weak var wheel: UIImageView!
+	var images = [UIImage]()
 	
 	//var delegate: AddGeoLocationViewControllerDelegate!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		let filePath = NSBundle.mainBundle().pathForResource("motiv8gif", ofType: "gif")
+		for var i = 0; i < 100; i++ {
+			images += [UIImage(named: "single-\(i)")!]
+		}
+		
+		/*let filePath = NSBundle.mainBundle().pathForResource("motiv8gif", ofType: "gif")
 		let gif = NSData(contentsOfFile: filePath!)
 		
 		webViewBG.loadData(gif!, MIMEType: "image/gif", textEncodingName: "UTF-8", baseURL: NSURL(fileURLWithPath:
 			NSBundle.mainBundle().bundlePath))
-		webViewBG.userInteractionEnabled = false
-		
-		_ = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+		webViewBG.userInteractionEnabled = false*/
 		
 		self.mapView.delegate = self
 		
@@ -48,6 +53,11 @@ class HomeViewController: UIViewController, AddGeoLocationViewControllerDelegate
 		locationManager.requestAlwaysAuthorization()
 		// 3
 		loadAllGeoLocations()
+		
+		//if (locationManager.location) {
+			_ = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+		//}
+		
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -56,10 +66,16 @@ class HomeViewController: UIViewController, AddGeoLocationViewControllerDelegate
 	}
 	
 	func update() {
-		fitPoints.text = String(++pts)
+		/*fitPoints.text = String(++pts)
 		if (pts == 100) {
 			totalPts.text = "Fit Points: " + String(++fitPts)
 			pts  = 0
+		}*/
+		fitPoints.text = "Fit Points: " + String(fitPts)
+		wheel.image = images[pts++]
+		if (pts == 100) {
+			fitPts++
+			pts = 0
 		}
 	}
 	
@@ -169,7 +185,6 @@ class HomeViewController: UIViewController, AddGeoLocationViewControllerDelegate
 	
 	func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
 		//if overlay is MKCircle {
-			//print("here")
 			let circleRenderer = MKCircleRenderer(overlay: overlay)
 			circleRenderer.lineWidth = 1.0
 			circleRenderer.strokeColor = UIColor.purpleColor()
@@ -189,7 +204,6 @@ class HomeViewController: UIViewController, AddGeoLocationViewControllerDelegate
 	// MARK: Map overlay functions
 	
 	func addRadiusOverlayForGeoLocation(geolocation: GeoLocation) {
-		//print("hello")
 		mapView?.addOverlay(MKCircle(centerCoordinate: geolocation.coordinate, radius: geolocation.radius))
 	}
 	
@@ -228,7 +242,6 @@ class HomeViewController: UIViewController, AddGeoLocationViewControllerDelegate
 	}
 	
 	func startMonitoringGeoLocation(geolocation: GeoLocation) {
-		print("wassup", terminator: "")
 		// 1
 		if !CLLocationManager.isMonitoringAvailableForClass(CLCircularRegion) {
 			showSimpleAlertWithTitle("Error", message: "Geofencing is not supported on this device!", viewController: self)
